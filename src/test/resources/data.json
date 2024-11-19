@@ -1,0 +1,11 @@
+{
+  "firstname": "Anastasia",
+  "lastname": "QA_GURU",
+  "totalprice": 249,
+  "depositpaid": false,
+  "bookingdates": {
+    "checkin": "2024-11-11",
+    "checkout": "2024-12-01"
+  },
+  "additionalneeds": "Breakfast + Dinner"
+}
