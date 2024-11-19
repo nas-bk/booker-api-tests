@@ -15,14 +15,14 @@ import static specs.Spec.*;
 
 public class TestBase {
 
-    private static final BaseConfig CONFIG = ConfigFactory.create(BaseConfig.class, System.getProperties());
+    static  BaseConfig config = ConfigFactory.create(BaseConfig.class, System.getProperties());
     public static BaseRequestModel bookingData = new BaseRequestModel();
     public Integer idBooking;
 
     @BeforeAll
     static void beforeAll(){
-        RestAssured.baseURI = CONFIG.baseUrl();
-        getAuthToken(CONFIG.username(),CONFIG.password());
+        RestAssured.baseURI = config.baseUrl();
+        getAuthToken(config.username(), config.password());
         bookingData = FileReader.readJson();
     }
 
