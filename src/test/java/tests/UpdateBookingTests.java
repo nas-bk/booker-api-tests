@@ -15,7 +15,6 @@ import static specs.Spec.*;
 public class UpdateBookingTests extends TestBase {
     BaseRequestModel newBookingData = new BaseRequestModel();
 
-
     @Test
     @DisplayName("Обновление текущего бронирования")
     void successfulUpdateBookingTest() {
@@ -24,7 +23,6 @@ public class UpdateBookingTests extends TestBase {
             idBooking = createBooking(bookingData);
             updateBookingData();
         });
-
 
         BaseRequestModel response = step("Отправить запрос на обновление бронирования", () ->
                 given(requestSpec)
@@ -36,8 +34,7 @@ public class UpdateBookingTests extends TestBase {
                         .spec(responseSpec200)
                         .extract().as(BaseRequestModel.class));
 
-
-        step("Проверить, что данные бронирования обновлены. Данные не соответствуют изначальным.", () -> {
+        step("Проверить, что данные бронирования обновлены. Данные не соответствуют изначальным", () -> {
             assertThat(response.getLastname()).isNotEqualTo(bookingData.getLastname());
             assertThat(response.getFirstname()).isNotEqualTo(bookingData.getFirstname());
         });
@@ -76,5 +73,4 @@ public class UpdateBookingTests extends TestBase {
         newBookingData.setDepositpaid(bookingData.getDepositpaid());
         newBookingData.setBookingdates(bookingData.getBookingdates());
     }
-
 }

@@ -20,7 +20,6 @@ public class Spec {
             .log().headers()
             .contentType(ContentType.JSON);
 
-
     private static ResponseSpecification baseResponseSpec(int statusCode) {
         return new ResponseSpecBuilder()
                 .expectStatusCode(statusCode)
@@ -32,6 +31,5 @@ public class Spec {
     public static ResponseSpecification responseSpec200 =baseResponseSpec(200);
     public static ResponseSpecification responseSpec201 = baseResponseSpec(201);
     public static ResponseSpecification responseSpec403 = baseResponseSpec(403);
-
 
 }

@@ -29,11 +29,10 @@ public class GetBookingTests extends TestBase {
                                 .spec(responseSpec200)
                                 .extract().as(BaseRequestModel.class));
 
-        step("Проверить, что запрос вернул данные соответсвющие созданному броннированию.", () ->
+        step("Проверить, что запрос вернул данные соответствующие созданному бронированию", () ->
                 assertThat(response).isEqualTo(bookingData));
 
         step("Удалить тестовые данные", () ->
                 deleteBooking(idBooking));
     }
-
 }

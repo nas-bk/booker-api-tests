@@ -27,9 +27,9 @@ public class CreateBookingTests extends TestBase {
                                 .spec(responseSpec200)
                                 .extract().as(BaseResponseModel.class));
 
-        step("Проверить, что данные броннирования соответствуют переданным в запросе", () ->
+        step("Проверить, что данные бронирования соответствуют переданным в запросе", () ->
                 assertThat(response.getBooking()).isEqualTo(bookingData));
-        step("Проверить, что броннированию присвоен id", () ->
+        step("Проверить, что бронированию присвоен id", () ->
                 assertThat(response.getBookingid()).isNotNull());
 
         step("Удалить тестовые данные", () ->
