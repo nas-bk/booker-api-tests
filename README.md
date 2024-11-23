@@ -70,7 +70,7 @@ gradle clean test
 ![allure](/images/screens/allure_suites.jpg)
 
 <a id="testops"></a>
-## Интеграция с <a target="_blank" href="https://jenkins.autotests.cloud/job/C29-bochkareva_a-booker-api-tests/allure/">**Allure TestOps**</a>
+## Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/4498/dashboards/">**Allure TestOps**</a>
 
 ![allure](/images/screens/allure_testOps.jpg)
 
