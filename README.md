@@ -10,7 +10,6 @@
 * <a href="#telegram">Уведомления в Telegram с использованием бота</a>
 
 <a id="tools"></a>
-
 ## Технологии и инструменты
 
 <p align="center">
@@ -26,8 +25,16 @@
 <a href="https://telegram.org/"><img src="images/logo/Telegram.png" width="50" height="50" alt="Telegram"/></a>
 </p>
 
-<a id="cases"></a>
+* Автотесты написаны на Java.
+* Gradle — используется как инструмент автоматизации сборки.
+* JUnit5 — для выполнения тестов.
+* REST Assured — для тестирования REST-API сервисов.
+* Jenkins — CI/CD для удаленного запуска тестов
+* Allure Report — для формирования отчетов тестирования.
+* Allure TestOps — система управления тестированием.
+* Telegram Bot — для уведомлений о результатах тестирования.
 
+<a id="cases"></a>
 ## Реализованы тесты для методов
 
 * Создание нового бронирования - CREATE
@@ -36,7 +43,6 @@
 * Удаление бронирования - DELETE
 
 <a id="console"></a>
-
 ## Запуск тестов
 
 Для запуска локально и в Jenkins используется команда:
@@ -48,12 +54,11 @@ gradle clean test
 ### Запуск в Jenkins
 
 Для запуска проекта через Jenkins была создана <a target="_blank" href="https://jenkins.autotests.cloud/job/C29-bochkareva_a-booker-api-tests/">**задача**</a>. Для запуска используете кнопку Build Now/Собрать сейчас.
-После выполнения сборки, результаты тестов станут доступны в Allure Report и Allure TestOps.
+После выполнения сборки результаты тестов станут доступны в Allure Report и Allure TestOps.
 
 ![Jenkins_build](/images/screens/Jenkins_build.jpg)
 
 <a id="allure"></a>
-
 ## Отчеты в <a target="_blank" href="https://jenkins.autotests.cloud/job/C29-bochkareva_a-booker-api-tests/allure/">**Allure**</a>
 
 На главной странице Allure отчета возможно узнать основную информацию о сбоке и тендецию выполнения тестов за все запуски.
@@ -65,7 +70,6 @@ gradle clean test
 ![allure](/images/screens/allure_suites.jpg)
 
 <a id="testops"></a>
-
 ## Интеграция с <a target="_blank" href="https://jenkins.autotests.cloud/job/C29-bochkareva_a-booker-api-tests/allure/">**Allure TestOps**</a>
 
 ![allure](/images/screens/allure_testOps.jpg)
