@@ -1,6 +1,6 @@
 package tests;
 
-import models.BaseRequestModel;
+import models.BookingBodyModel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -15,19 +15,17 @@ public class GetBookingTests extends TestBase {
     @Test
     @DisplayName("Получение информации существующего бронирования")
     void successfulGetBookingTest() {
+        int idBooking = createBooking(bookingData);
 
-        step("Подготовить тестовые данные", () ->
-                idBooking = createBooking(bookingData));
-
-        BaseRequestModel response =
+        BookingBodyModel response =
                 step("Отправить запрос на получение данных бронирования по его id", () ->
                         given(requestSpec)
-                                .cookie("token", System.getProperty("token"))
+                                .cookie("token", token)
                                 .when()
                                 .get("/booking/" + idBooking)
                                 .then()
                                 .spec(responseSpec200)
-                                .extract().as(BaseRequestModel.class));
+                                .extract().as(BookingBodyModel.class));
 
         step("Проверить, что запрос вернул данные соответствующие созданному бронированию", () ->
                 assertThat(response).isEqualTo(bookingData));
