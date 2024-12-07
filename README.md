@@ -45,11 +45,19 @@
 <a id="console"></a>
 ## Запуск тестов
 
-Для запуска локально и в Jenkins используется команда:
+Для запуска локально возможно использование команд:
 
 ```
-gradle clean test
+gradle clean test -DuserName=<userName> -Dpassword=<password>
 ```
+* *userName* - имя пользователя на сайте restful-booker
+* *password* - пароль на сайте restful-booker
+
+```
+gradle clean test 
+```
+При наличии в папке *resources* файла *bookerAuth.properties* со значениями *userName* и *password*
+
 
 ### Запуск в Jenkins
 
@@ -61,11 +69,11 @@ gradle clean test
 <a id="allure"></a>
 ## Отчеты в <a target="_blank" href="https://jenkins.autotests.cloud/job/C29-bochkareva_a-booker-api-tests/allure/">**Allure**</a>
 
-На главной странице Allure отчета возможно узнать основную информацию о сбоке и тендецию выполнения тестов за все запуски.
+На главной странице Allure отчета возможно узнать основную информацию о сборке и тенденцию выполнения тестов за все запуски.
 
 ![allure](/images/screens/allure.jpg)
 
-На странице Suites отображется список тестов с полной информацией (шаги, артефакты, продолжительность выполнения).
+На странице Suites представлен список тестов с описанием шагов, визуализацией результатов и с информацией о продолжительности выполнения.
 
 ![allure](/images/screens/allure_suites.jpg)
 
